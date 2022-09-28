@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cadastro de produtos J&F</h1>
+    </header>
+    <main>
+        <h2>Adicionar Produto</h2>
+        <label for="marca">Marca: </label>
+        <select name="marca" id="marca">
+            <option value=""></option>
+            <option value="Seara">Seara</option>
+            <option value="Swift">Swift</option>
+            <option value="Friboi">Friboi</option>
+        </select>
+        <label for="name">Produto: </label>
+        <input type="text" name="name" id="name">
+        <label for="number">Código: </label>
+        <input type="number" name="number" id="number">
+        <label for="preco">Preço: </label>
+        <input type="number" name="preco" id="preco">
+        <button onclick="addProduto()">Adicionar</button>
+    </main>
+    <hr>
+    <article>
+        <h2>Remover produto</h2>
+        <label for="codigo_remover">Código do produto: </label>
+        <input type="number" name="codigo_remover" id="codigo_remover">
+        <button onclick="removeProduto()">Remover</button>
+    </article>
+    <hr>
+    <h3>Produtos no mercado:</h3>
+    <section id="resultado">
+        <div>
+            <h2>Seara</h2>
+            <ul id="lista-seara"></ul>
+        </div>
+        <div>
+            <h2>Swift</h2>
+            <ul id="lista-swift"></ul>
+        </div>
+        <div>
+            <h2>Friboi</h2>
+            <ul id="lista-friboi"></ul>
+        </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
