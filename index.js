@@ -16,8 +16,11 @@ function addProduto(){
 
     //objeto criado e instânciado
     produtoF = {"marca": marca, "produto": produto, "codigo": codigo, "preco": preco}
- 
-    // Verificação de marca e separação
+
+    var respostaP = confirm("Deseja adicionar produto?") //Botão de confirmar
+
+    if (respostaP == true){  //caso esteja confirmado irá funcionar
+        // Verificação de marca e separação
     if(produtoF.marca == "Seara"){ 
         //Cria um novo elemento (li) com a classe igual ao código do produto --> dos produtos da marca Seara
         let elemento = document.createElement('li')
@@ -38,6 +41,8 @@ function addProduto(){
         //cria um novo elemento no HTML
         document.querySelector('#lista-friboi').appendChild(elemento).innerHTML = `(${produtoF.codigo}) - Marca: ${produtoF.marca} - ${produtoF.produto} R$ ${produtoF.preco}`
     }
+    }
+ 
 }
 
 //Função para remover as informações do produto
@@ -46,12 +51,16 @@ function removeProduto(){
     var li = document.querySelectorAll('li')
     //captura o código do produto que o usuário deseja apagar
     var resposta = document.querySelector('#codigo_remover').value
+    var respostaD = confirm("Deseja adicionar produto?") //Botão de confirmar
 
-    //Loop para verificar todos os li's com o código do produto que deseja apagar
-    for (i = 0; i < li.length; i++){
-        if (li[i].className == resposta){
-            //Substitui o conteudo HTML
-            li[i].innerHTML = ""
-        }
+    if (respostaD == true){ //caso esteja confirmado irá funcionar
+        //Loop para verificar todos os li's com o código do produto que deseja apagar
+        for (i = 0; i < li.length; i++){
+            if (li[i].className == resposta){
+                //Substitui o conteudo HTML
+                li[i].innerHTML = ""
+            }
     }
+    }
+
 }
